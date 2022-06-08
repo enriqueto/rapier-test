@@ -1,0 +1,6 @@
+tmp/*
+.vscode/*
+\.DS_Store
+.node_version
+node_modules
+npm-debug.log
