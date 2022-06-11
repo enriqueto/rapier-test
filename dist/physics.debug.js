@@ -12,7 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "wasm/rapier_wasm2d_bg.5f86d35fdcfdfa6c82c001fa58012d28.wasm");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/dist/wasm/rapier_wasm2d_bg.5f86d35fdcfdfa6c82c001fa58012d28.wasm");
 
 /***/ }),
 
@@ -10120,11 +10120,6 @@ exports.HUD = HUD;
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		__webpack_require__.p = "/dist/";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
