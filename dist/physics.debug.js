@@ -1,21 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm":
-/*!***************************************************************!*\
-  !*** ./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/dist/wasm/rapier_wasm2d_bg.5f86d35fdcfdfa6c82c001fa58012d28.wasm");
-
-/***/ }),
-
 /***/ "./node_modules/@dimforge/rapier2d/coarena.js":
 /*!****************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/coarena.js ***!
@@ -95,14 +80,17 @@ class Coarena {
 /*!****************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js ***!
   \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CCDSolver": () => (/* binding */ CCDSolver)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The CCD solver responsible for resolving Continuous Collision Detection.
@@ -123,6 +111,8 @@ class CCDSolver {
     }
 }
 //# sourceMappingURL=ccd_solver.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -159,9 +149,10 @@ var CoefficientCombineRule;
 /*!*******************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js ***!
   \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FixedImpulseJoint": () => (/* binding */ FixedImpulseJoint),
@@ -175,6 +166,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__, _raw__WEBPACK_IMPORTED_MODULE_1__]);
+([_math__WEBPACK_IMPORTED_MODULE_0__, _raw__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 /**
@@ -413,6 +406,8 @@ class JointData {
     }
 }
 //# sourceMappingURL=impulse_joint.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -420,9 +415,10 @@ class JointData {
 /*!***********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/impulse_joint_set.js ***!
   \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ImpulseJointSet": () => (/* binding */ ImpulseJointSet)
@@ -430,6 +426,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _coarena__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../coarena */ "./node_modules/@dimforge/rapier2d/coarena.js");
 /* harmony import */ var _impulse_joint__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./impulse_joint */ "./node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _impulse_joint__WEBPACK_IMPORTED_MODULE_2__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _impulse_joint__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -547,6 +545,8 @@ class ImpulseJointSet {
     }
 }
 //# sourceMappingURL=impulse_joint_set.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -554,9 +554,10 @@ class ImpulseJointSet {
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/index.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CCDSolver": () => (/* reexport safe */ _ccd_solver__WEBPACK_IMPORTED_MODULE_8__.CCDSolver),
@@ -593,6 +594,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _coefficient_combine_rule__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./coefficient_combine_rule */ "./node_modules/@dimforge/rapier2d/dynamics/coefficient_combine_rule.js");
 /* harmony import */ var _ccd_solver__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ccd_solver */ "./node_modules/@dimforge/rapier2d/dynamics/ccd_solver.js");
 /* harmony import */ var _island_manager__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./island_manager */ "./node_modules/@dimforge/rapier2d/dynamics/island_manager.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_rigid_body__WEBPACK_IMPORTED_MODULE_0__, _rigid_body_set__WEBPACK_IMPORTED_MODULE_1__, _integration_parameters__WEBPACK_IMPORTED_MODULE_2__, _impulse_joint__WEBPACK_IMPORTED_MODULE_3__, _impulse_joint_set__WEBPACK_IMPORTED_MODULE_4__, _multibody_joint__WEBPACK_IMPORTED_MODULE_5__, _multibody_joint_set__WEBPACK_IMPORTED_MODULE_6__, _ccd_solver__WEBPACK_IMPORTED_MODULE_8__, _island_manager__WEBPACK_IMPORTED_MODULE_9__]);
+([_rigid_body__WEBPACK_IMPORTED_MODULE_0__, _rigid_body_set__WEBPACK_IMPORTED_MODULE_1__, _integration_parameters__WEBPACK_IMPORTED_MODULE_2__, _impulse_joint__WEBPACK_IMPORTED_MODULE_3__, _impulse_joint_set__WEBPACK_IMPORTED_MODULE_4__, _multibody_joint__WEBPACK_IMPORTED_MODULE_5__, _multibody_joint_set__WEBPACK_IMPORTED_MODULE_6__, _ccd_solver__WEBPACK_IMPORTED_MODULE_8__, _island_manager__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -604,6 +607,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //# sourceMappingURL=index.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -611,14 +616,17 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/integration_parameters.js ***!
   \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "IntegrationParameters": () => (/* binding */ IntegrationParameters)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 class IntegrationParameters {
     constructor(raw) {
@@ -715,6 +723,8 @@ class IntegrationParameters {
     }
 }
 //# sourceMappingURL=integration_parameters.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -722,14 +732,17 @@ class IntegrationParameters {
 /*!********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/island_manager.js ***!
   \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "IslandManager": () => (/* binding */ IslandManager)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The CCD solver responsible for resolving Continuous Collision Detection.
@@ -760,6 +773,8 @@ class IslandManager {
     }
 }
 //# sourceMappingURL=island_manager.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -767,9 +782,10 @@ class IslandManager {
 /*!*********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js ***!
   \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FixedMultibodyJoint": () => (/* binding */ FixedMultibodyJoint),
@@ -780,6 +796,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _impulse_joint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./impulse_joint */ "./node_modules/@dimforge/rapier2d/dynamics/impulse_joint.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_impulse_joint__WEBPACK_IMPORTED_MODULE_0__, _raw__WEBPACK_IMPORTED_MODULE_1__]);
+([_impulse_joint__WEBPACK_IMPORTED_MODULE_0__, _raw__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 class MultibodyJoint {
@@ -822,6 +840,8 @@ class RevoluteMultibodyJoint extends UnitMultibodyJoint {
     }
 }
 //# sourceMappingURL=multibody_joint.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -829,9 +849,10 @@ class RevoluteMultibodyJoint extends UnitMultibodyJoint {
 /*!*************************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/multibody_joint_set.js ***!
   \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "MultibodyJointSet": () => (/* binding */ MultibodyJointSet)
@@ -839,6 +860,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _coarena__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../coarena */ "./node_modules/@dimforge/rapier2d/coarena.js");
 /* harmony import */ var _multibody_joint__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./multibody_joint */ "./node_modules/@dimforge/rapier2d/dynamics/multibody_joint.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _multibody_joint__WEBPACK_IMPORTED_MODULE_2__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _multibody_joint__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -951,6 +974,8 @@ class MultibodyJointSet {
     }
 }
 //# sourceMappingURL=multibody_joint_set.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -958,9 +983,10 @@ class MultibodyJointSet {
 /*!****************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/rigid_body.js ***!
   \****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RigidBody": () => (/* binding */ RigidBody),
@@ -968,6 +994,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "RigidBodyType": () => (/* binding */ RigidBodyType)
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__]);
+_math__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The simulation status of a rigid-body.
@@ -1690,6 +1718,8 @@ class RigidBodyDesc {
     }
 }
 //# sourceMappingURL=rigid_body.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -1697,9 +1727,10 @@ class RigidBodyDesc {
 /*!********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/dynamics/rigid_body_set.js ***!
   \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RigidBodySet": () => (/* binding */ RigidBodySet)
@@ -1708,6 +1739,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _coarena__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../coarena */ "./node_modules/@dimforge/rapier2d/coarena.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _rigid_body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rigid_body */ "./node_modules/@dimforge/rapier2d/dynamics/rigid_body.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _rigid_body__WEBPACK_IMPORTED_MODULE_2__, _math__WEBPACK_IMPORTED_MODULE_3__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _rigid_body__WEBPACK_IMPORTED_MODULE_2__, _math__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -1841,6 +1874,8 @@ class RigidBodySet {
     }
 }
 //# sourceMappingURL=rigid_body_set.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -1848,9 +1883,10 @@ class RigidBodySet {
 /*!****************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/exports.js ***!
   \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveCollisionTypes": () => (/* reexport safe */ _geometry__WEBPACK_IMPORTED_MODULE_3__.ActiveCollisionTypes),
@@ -1926,6 +1962,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dynamics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dynamics */ "./node_modules/@dimforge/rapier2d/dynamics/index.js");
 /* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./geometry */ "./node_modules/@dimforge/rapier2d/geometry/index.js");
 /* harmony import */ var _pipeline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pipeline */ "./node_modules/@dimforge/rapier2d/pipeline/index.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _dynamics__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _pipeline__WEBPACK_IMPORTED_MODULE_4__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _dynamics__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _pipeline__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 function version() {
     return (0,_raw__WEBPACK_IMPORTED_MODULE_0__.version)();
@@ -1936,6 +1974,8 @@ function version() {
 
 
 //# sourceMappingURL=exports.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -1943,14 +1983,17 @@ function version() {
 /*!*****************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/broad_phase.js ***!
   \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "BroadPhase": () => (/* binding */ BroadPhase)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The broad-phase used for coarse collision-detection.
@@ -1971,6 +2014,8 @@ class BroadPhase {
     }
 }
 //# sourceMappingURL=broad_phase.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -1978,9 +2023,10 @@ class BroadPhase {
 /*!**************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/collider.js ***!
   \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveCollisionTypes": () => (/* binding */ ActiveCollisionTypes),
@@ -1994,6 +2040,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./point */ "./node_modules/@dimforge/rapier2d/geometry/point.js");
 /* harmony import */ var _toi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./toi */ "./node_modules/@dimforge/rapier2d/geometry/toi.js");
 /* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contact */ "./node_modules/@dimforge/rapier2d/geometry/contact.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_shape__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _point__WEBPACK_IMPORTED_MODULE_2__, _toi__WEBPACK_IMPORTED_MODULE_3__, _contact__WEBPACK_IMPORTED_MODULE_4__, _ray__WEBPACK_IMPORTED_MODULE_5__]);
+([_shape__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _point__WEBPACK_IMPORTED_MODULE_2__, _toi__WEBPACK_IMPORTED_MODULE_3__, _contact__WEBPACK_IMPORTED_MODULE_4__, _ray__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -2873,6 +2921,8 @@ class ColliderDesc {
     }
 }
 //# sourceMappingURL=collider.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -2880,9 +2930,10 @@ class ColliderDesc {
 /*!******************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/collider_set.js ***!
   \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ColliderSet": () => (/* binding */ ColliderSet)
@@ -2891,6 +2942,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _coarena__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../coarena */ "./node_modules/@dimforge/rapier2d/coarena.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _collider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collider */ "./node_modules/@dimforge/rapier2d/geometry/collider.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _collider__WEBPACK_IMPORTED_MODULE_2__, _math__WEBPACK_IMPORTED_MODULE_3__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _collider__WEBPACK_IMPORTED_MODULE_2__, _math__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -3012,6 +3065,8 @@ class ColliderSet {
     }
 }
 //# sourceMappingURL=collider_set.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3019,14 +3074,17 @@ class ColliderSet {
 /*!*************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/contact.js ***!
   \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ShapeContact": () => (/* binding */ ShapeContact)
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__]);
+_math__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The contact info between two shapes.
@@ -3048,6 +3106,8 @@ class ShapeContact {
     }
 }
 //# sourceMappingURL=contact.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3078,9 +3138,10 @@ var FeatureType;
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/index.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveCollisionTypes": () => (/* reexport safe */ _collider__WEBPACK_IMPORTED_MODULE_3__.ActiveCollisionTypes),
@@ -3125,6 +3186,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./point */ "./node_modules/@dimforge/rapier2d/geometry/point.js");
 /* harmony import */ var _toi__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./toi */ "./node_modules/@dimforge/rapier2d/geometry/toi.js");
 /* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./contact */ "./node_modules/@dimforge/rapier2d/geometry/contact.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_broad_phase__WEBPACK_IMPORTED_MODULE_0__, _narrow_phase__WEBPACK_IMPORTED_MODULE_1__, _shape__WEBPACK_IMPORTED_MODULE_2__, _collider__WEBPACK_IMPORTED_MODULE_3__, _collider_set__WEBPACK_IMPORTED_MODULE_4__, _ray__WEBPACK_IMPORTED_MODULE_6__, _point__WEBPACK_IMPORTED_MODULE_7__, _toi__WEBPACK_IMPORTED_MODULE_8__, _contact__WEBPACK_IMPORTED_MODULE_9__]);
+([_broad_phase__WEBPACK_IMPORTED_MODULE_0__, _narrow_phase__WEBPACK_IMPORTED_MODULE_1__, _shape__WEBPACK_IMPORTED_MODULE_2__, _collider__WEBPACK_IMPORTED_MODULE_3__, _collider_set__WEBPACK_IMPORTED_MODULE_4__, _ray__WEBPACK_IMPORTED_MODULE_6__, _point__WEBPACK_IMPORTED_MODULE_7__, _toi__WEBPACK_IMPORTED_MODULE_8__, _contact__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -3137,6 +3200,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //# sourceMappingURL=index.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3144,9 +3209,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/narrow_phase.js ***!
   \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NarrowPhase": () => (/* binding */ NarrowPhase),
@@ -3154,6 +3220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 /**
@@ -3295,6 +3363,8 @@ class TempContactManifold {
     }
 }
 //# sourceMappingURL=narrow_phase.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3302,9 +3372,10 @@ class TempContactManifold {
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/point.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PointColliderProjection": () => (/* binding */ PointColliderProjection),
@@ -3312,6 +3383,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _feature__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feature */ "./node_modules/@dimforge/rapier2d/geometry/feature.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__]);
+_math__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 /**
@@ -3360,6 +3433,8 @@ class PointColliderProjection {
     }
 }
 //# sourceMappingURL=point.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3367,9 +3442,10 @@ class PointColliderProjection {
 /*!*********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/ray.js ***!
   \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Ray": () => (/* binding */ Ray),
@@ -3379,6 +3455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _feature__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./feature */ "./node_modules/@dimforge/rapier2d/geometry/feature.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_1__]);
+_math__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 /**
@@ -3476,6 +3554,8 @@ class RayColliderToi {
     }
 }
 //# sourceMappingURL=ray.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -3483,9 +3563,10 @@ class RayColliderToi {
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/shape.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Ball": () => (/* binding */ Ball),
@@ -3509,6 +3590,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _point__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./point */ "./node_modules/@dimforge/rapier2d/geometry/point.js");
 /* harmony import */ var _ray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ray */ "./node_modules/@dimforge/rapier2d/geometry/ray.js");
 /* harmony import */ var _toi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toi */ "./node_modules/@dimforge/rapier2d/geometry/toi.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__, _toi__WEBPACK_IMPORTED_MODULE_1__, _contact__WEBPACK_IMPORTED_MODULE_2__, _point__WEBPACK_IMPORTED_MODULE_3__, _ray__WEBPACK_IMPORTED_MODULE_4__, _raw__WEBPACK_IMPORTED_MODULE_5__]);
+([_math__WEBPACK_IMPORTED_MODULE_0__, _toi__WEBPACK_IMPORTED_MODULE_1__, _contact__WEBPACK_IMPORTED_MODULE_2__, _point__WEBPACK_IMPORTED_MODULE_3__, _ray__WEBPACK_IMPORTED_MODULE_4__, _raw__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4054,6 +4137,8 @@ class Heightfield extends Shape {
 }
 // #endif
 //# sourceMappingURL=shape.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4061,15 +4146,18 @@ class Heightfield extends Shape {
 /*!*********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/geometry/toi.js ***!
   \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ShapeColliderTOI": () => (/* binding */ ShapeColliderTOI),
 /* harmony export */   "ShapeTOI": () => (/* binding */ ShapeTOI)
 /* harmony export */ });
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_math__WEBPACK_IMPORTED_MODULE_0__]);
+_math__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The intersection between a ray and a collider.
@@ -4107,6 +4195,8 @@ class ShapeColliderTOI extends ShapeTOI {
     }
 }
 //# sourceMappingURL=toi.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4114,9 +4204,10 @@ class ShapeColliderTOI extends ShapeTOI {
 /*!*************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/math.js ***!
   \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RotationOps": () => (/* binding */ RotationOps),
@@ -4124,6 +4215,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "VectorOps": () => (/* binding */ VectorOps)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * A 2D vector.
@@ -4170,6 +4263,8 @@ class RotationOps {
 }
 // #endif
 //# sourceMappingURL=math.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4177,15 +4272,18 @@ class RotationOps {
 /*!***************************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js ***!
   \***************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DebugRenderBuffers": () => (/* binding */ DebugRenderBuffers),
 /* harmony export */   "DebugRenderPipeline": () => (/* binding */ DebugRenderPipeline)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /**
  * The vertex and color buffers for debug-redering the physics scene.
@@ -4222,6 +4320,8 @@ class DebugRenderPipeline {
     }
 }
 //# sourceMappingURL=debug_render_pipeline.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4229,15 +4329,18 @@ class DebugRenderPipeline {
 /*!*****************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/event_queue.js ***!
   \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveEvents": () => (/* binding */ ActiveEvents),
 /* harmony export */   "EventQueue": () => (/* binding */ EventQueue)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__]);
+_raw__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 /// Flags indicating what events are enabled for colliders.
 var ActiveEvents;
@@ -4291,6 +4394,8 @@ class EventQueue {
     }
 }
 //# sourceMappingURL=event_queue.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4298,9 +4403,10 @@ class EventQueue {
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/index.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveEvents": () => (/* reexport safe */ _event_queue__WEBPACK_IMPORTED_MODULE_3__.ActiveEvents),
@@ -4319,6 +4425,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _event_queue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./event_queue */ "./node_modules/@dimforge/rapier2d/pipeline/event_queue.js");
 /* harmony import */ var _physics_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./physics_hooks */ "./node_modules/@dimforge/rapier2d/pipeline/physics_hooks.js");
 /* harmony import */ var _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./debug_render_pipeline */ "./node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_world__WEBPACK_IMPORTED_MODULE_0__, _physics_pipeline__WEBPACK_IMPORTED_MODULE_1__, _serialization_pipeline__WEBPACK_IMPORTED_MODULE_2__, _event_queue__WEBPACK_IMPORTED_MODULE_3__, _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_5__]);
+([_world__WEBPACK_IMPORTED_MODULE_0__, _physics_pipeline__WEBPACK_IMPORTED_MODULE_1__, _serialization_pipeline__WEBPACK_IMPORTED_MODULE_2__, _event_queue__WEBPACK_IMPORTED_MODULE_3__, _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4326,6 +4434,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //# sourceMappingURL=index.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4360,15 +4470,18 @@ var SolverFlags;
 /*!**********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/physics_pipeline.js ***!
   \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "PhysicsPipeline": () => (/* binding */ PhysicsPipeline)
 /* harmony export */ });
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 class PhysicsPipeline {
@@ -4391,6 +4504,8 @@ class PhysicsPipeline {
     }
 }
 //# sourceMappingURL=physics_pipeline.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4398,9 +4513,10 @@ class PhysicsPipeline {
 /*!********************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js ***!
   \********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "QueryPipeline": () => (/* binding */ QueryPipeline)
@@ -4410,6 +4526,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../geometry */ "./node_modules/@dimforge/rapier2d/geometry/point.js");
 /* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../geometry */ "./node_modules/@dimforge/rapier2d/geometry/toi.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _geometry__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _geometry__WEBPACK_IMPORTED_MODULE_4__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _geometry__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _geometry__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4636,6 +4754,8 @@ class QueryPipeline {
     }
 }
 //# sourceMappingURL=query_pipeline.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4643,9 +4763,10 @@ class QueryPipeline {
 /*!****************************************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js ***!
   \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SerializationPipeline": () => (/* binding */ SerializationPipeline)
@@ -4653,6 +4774,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../raw */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
 /* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../math */ "./node_modules/@dimforge/rapier2d/math.js");
 /* harmony import */ var _world__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./world */ "./node_modules/@dimforge/rapier2d/pipeline/world.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _world__WEBPACK_IMPORTED_MODULE_2__]);
+([_raw__WEBPACK_IMPORTED_MODULE_0__, _math__WEBPACK_IMPORTED_MODULE_1__, _world__WEBPACK_IMPORTED_MODULE_2__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -4700,6 +4823,8 @@ class SerializationPipeline {
     }
 }
 //# sourceMappingURL=serialization_pipeline.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -4707,9 +4832,10 @@ class SerializationPipeline {
 /*!***********************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/pipeline/world.js ***!
   \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "World": () => (/* binding */ World)
@@ -4728,6 +4854,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_pipeline__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./query_pipeline */ "./node_modules/@dimforge/rapier2d/pipeline/query_pipeline.js");
 /* harmony import */ var _serialization_pipeline__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./serialization_pipeline */ "./node_modules/@dimforge/rapier2d/pipeline/serialization_pipeline.js");
 /* harmony import */ var _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./debug_render_pipeline */ "./node_modules/@dimforge/rapier2d/pipeline/debug_render_pipeline.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_dynamics__WEBPACK_IMPORTED_MODULE_0__, _dynamics__WEBPACK_IMPORTED_MODULE_1__, _geometry__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _dynamics__WEBPACK_IMPORTED_MODULE_4__, _geometry__WEBPACK_IMPORTED_MODULE_5__, _dynamics__WEBPACK_IMPORTED_MODULE_6__, _dynamics__WEBPACK_IMPORTED_MODULE_7__, _dynamics__WEBPACK_IMPORTED_MODULE_8__, _query_pipeline__WEBPACK_IMPORTED_MODULE_9__, _physics_pipeline__WEBPACK_IMPORTED_MODULE_10__, _serialization_pipeline__WEBPACK_IMPORTED_MODULE_11__, _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_12__, _math__WEBPACK_IMPORTED_MODULE_13__]);
+([_dynamics__WEBPACK_IMPORTED_MODULE_0__, _dynamics__WEBPACK_IMPORTED_MODULE_1__, _geometry__WEBPACK_IMPORTED_MODULE_2__, _geometry__WEBPACK_IMPORTED_MODULE_3__, _dynamics__WEBPACK_IMPORTED_MODULE_4__, _geometry__WEBPACK_IMPORTED_MODULE_5__, _dynamics__WEBPACK_IMPORTED_MODULE_6__, _dynamics__WEBPACK_IMPORTED_MODULE_7__, _dynamics__WEBPACK_IMPORTED_MODULE_8__, _query_pipeline__WEBPACK_IMPORTED_MODULE_9__, _physics_pipeline__WEBPACK_IMPORTED_MODULE_10__, _serialization_pipeline__WEBPACK_IMPORTED_MODULE_11__, _debug_render_pipeline__WEBPACK_IMPORTED_MODULE_12__, _math__WEBPACK_IMPORTED_MODULE_13__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -5238,6 +5366,8 @@ function castClosure(set, f) {
     };
 }
 //# sourceMappingURL=world.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -5245,9 +5375,10 @@ function castClosure(set, f) {
 /*!***************************************************!*\
   !*** ./node_modules/@dimforge/rapier2d/rapier.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActiveCollisionTypes": () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.ActiveCollisionTypes),
@@ -5320,10 +5451,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "version": () => (/* reexport safe */ _exports__WEBPACK_IMPORTED_MODULE_0__.version)
 /* harmony export */ });
 /* harmony import */ var _exports__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./exports */ "./node_modules/@dimforge/rapier2d/exports.js");
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_exports__WEBPACK_IMPORTED_MODULE_0__]);
+_exports__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_exports__WEBPACK_IMPORTED_MODULE_0__);
 //# sourceMappingURL=rapier.js.map
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -5334,6 +5469,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "RawBroadPhase": () => (/* binding */ RawBroadPhase),
@@ -5396,6 +5532,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _rapier_wasm2d_bg_wasm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rapier_wasm2d_bg.wasm */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm");
 /* module decorator */ module = __webpack_require__.hmd(module);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_rapier_wasm2d_bg_wasm__WEBPACK_IMPORTED_MODULE_0__]);
+_rapier_wasm2d_bg_wasm__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 const heap = new Array(32).fill(undefined);
@@ -9412,6 +9550,8 @@ function __wbindgen_memory() {
 };
 
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -9865,7 +10005,9 @@ var BoardContainer = /** @class */ (function (_super) {
     __extends(BoardContainer, _super);
     function BoardContainer(scene) {
         var _this = _super.call(this, scene) || this;
-        Promise.resolve().then(function () { return __importStar(__webpack_require__(/*! @dimforge/rapier2d */ "./node_modules/@dimforge/rapier2d/rapier.js")); }).then(function (RAPIER) {
+        Promise.resolve().then(function () { return __importStar(__webpack_require__(
+        /* webpackMode: "eager" */
+        /*! @dimforge/rapier2d */ "./node_modules/@dimforge/rapier2d/rapier.js")); }).then(function (RAPIER) {
             console.log("HOLA");
             // Use the RAPIER module here.
             var gravity = { x: 0.0, y: -9.81 };
@@ -10047,6 +10189,76 @@ var HUD = /** @class */ (function (_super) {
 exports.HUD = HUD;
 
 
+/***/ }),
+
+/***/ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm":
+/*!***************************************************************!*\
+  !*** ./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.wasm ***!
+  \***************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+"use strict";
+var __webpack_instantiate__ = ([WEBPACK_IMPORTED_MODULE_0]) => {
+	return __webpack_require__.v(exports, module.id, "1ea1261b4c399eaa3f65", {
+		"./rapier_wasm2d_bg.js": {
+			"__wbindgen_object_drop_ref": WEBPACK_IMPORTED_MODULE_0.__wbindgen_object_drop_ref,
+			"__wbindgen_number_new": WEBPACK_IMPORTED_MODULE_0.__wbindgen_number_new,
+			"__wbindgen_number_get": WEBPACK_IMPORTED_MODULE_0.__wbindgen_number_get,
+			"__wbindgen_boolean_get": WEBPACK_IMPORTED_MODULE_0.__wbindgen_boolean_get,
+			"__wbg_rawraycolliderintersection_new": WEBPACK_IMPORTED_MODULE_0.__wbg_rawraycolliderintersection_new,
+			"__wbindgen_is_function": WEBPACK_IMPORTED_MODULE_0.__wbindgen_is_function,
+			"__wbg_call_3ed288a247f13ea5": WEBPACK_IMPORTED_MODULE_0.__wbg_call_3ed288a247f13ea5,
+			"__wbg_call_a19d3173f3e1d3c5": WEBPACK_IMPORTED_MODULE_0.__wbg_call_a19d3173f3e1d3c5,
+			"__wbg_call_6ed7121cfb42cfed": WEBPACK_IMPORTED_MODULE_0.__wbg_call_6ed7121cfb42cfed,
+			"__wbg_bind_c09a1641c1580c07": WEBPACK_IMPORTED_MODULE_0.__wbg_bind_c09a1641c1580c07,
+			"__wbg_buffer_7af23f65f6c64548": WEBPACK_IMPORTED_MODULE_0.__wbg_buffer_7af23f65f6c64548,
+			"__wbg_newwithbyteoffsetandlength_ce1e75f0ce5f7974": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithbyteoffsetandlength_ce1e75f0ce5f7974,
+			"__wbg_new_cc9018bd6f283b6f": WEBPACK_IMPORTED_MODULE_0.__wbg_new_cc9018bd6f283b6f,
+			"__wbg_set_f25e869e4565d2a2": WEBPACK_IMPORTED_MODULE_0.__wbg_set_f25e869e4565d2a2,
+			"__wbg_length_0acb1cf9bbaf8519": WEBPACK_IMPORTED_MODULE_0.__wbg_length_0acb1cf9bbaf8519,
+			"__wbg_newwithbyteoffsetandlength_3f554978d8793b14": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithbyteoffsetandlength_3f554978d8793b14,
+			"__wbg_set_9a9604c6888f6468": WEBPACK_IMPORTED_MODULE_0.__wbg_set_9a9604c6888f6468,
+			"__wbg_length_371cc1c92aa8feae": WEBPACK_IMPORTED_MODULE_0.__wbg_length_371cc1c92aa8feae,
+			"__wbg_newwithlength_e538258cb2a6bad0": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithlength_e538258cb2a6bad0,
+			"__wbindgen_throw": WEBPACK_IMPORTED_MODULE_0.__wbindgen_throw,
+			"__wbindgen_memory": WEBPACK_IMPORTED_MODULE_0.__wbindgen_memory
+		}
+	});
+}
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => {
+	try {
+	/* harmony import */ var WEBPACK_IMPORTED_MODULE_0 = __webpack_require__(/*! ./rapier_wasm2d_bg.js */ "./node_modules/@dimforge/rapier2d/rapier_wasm2d_bg.js");
+	var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([WEBPACK_IMPORTED_MODULE_0]);
+	var [WEBPACK_IMPORTED_MODULE_0] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__;
+	await __webpack_require__.v(exports, module.id, "1ea1261b4c399eaa3f65", {
+		"./rapier_wasm2d_bg.js": {
+			"__wbindgen_object_drop_ref": WEBPACK_IMPORTED_MODULE_0.__wbindgen_object_drop_ref,
+			"__wbindgen_number_new": WEBPACK_IMPORTED_MODULE_0.__wbindgen_number_new,
+			"__wbindgen_number_get": WEBPACK_IMPORTED_MODULE_0.__wbindgen_number_get,
+			"__wbindgen_boolean_get": WEBPACK_IMPORTED_MODULE_0.__wbindgen_boolean_get,
+			"__wbg_rawraycolliderintersection_new": WEBPACK_IMPORTED_MODULE_0.__wbg_rawraycolliderintersection_new,
+			"__wbindgen_is_function": WEBPACK_IMPORTED_MODULE_0.__wbindgen_is_function,
+			"__wbg_call_3ed288a247f13ea5": WEBPACK_IMPORTED_MODULE_0.__wbg_call_3ed288a247f13ea5,
+			"__wbg_call_a19d3173f3e1d3c5": WEBPACK_IMPORTED_MODULE_0.__wbg_call_a19d3173f3e1d3c5,
+			"__wbg_call_6ed7121cfb42cfed": WEBPACK_IMPORTED_MODULE_0.__wbg_call_6ed7121cfb42cfed,
+			"__wbg_bind_c09a1641c1580c07": WEBPACK_IMPORTED_MODULE_0.__wbg_bind_c09a1641c1580c07,
+			"__wbg_buffer_7af23f65f6c64548": WEBPACK_IMPORTED_MODULE_0.__wbg_buffer_7af23f65f6c64548,
+			"__wbg_newwithbyteoffsetandlength_ce1e75f0ce5f7974": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithbyteoffsetandlength_ce1e75f0ce5f7974,
+			"__wbg_new_cc9018bd6f283b6f": WEBPACK_IMPORTED_MODULE_0.__wbg_new_cc9018bd6f283b6f,
+			"__wbg_set_f25e869e4565d2a2": WEBPACK_IMPORTED_MODULE_0.__wbg_set_f25e869e4565d2a2,
+			"__wbg_length_0acb1cf9bbaf8519": WEBPACK_IMPORTED_MODULE_0.__wbg_length_0acb1cf9bbaf8519,
+			"__wbg_newwithbyteoffsetandlength_3f554978d8793b14": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithbyteoffsetandlength_3f554978d8793b14,
+			"__wbg_set_9a9604c6888f6468": WEBPACK_IMPORTED_MODULE_0.__wbg_set_9a9604c6888f6468,
+			"__wbg_length_371cc1c92aa8feae": WEBPACK_IMPORTED_MODULE_0.__wbg_length_371cc1c92aa8feae,
+			"__wbg_newwithlength_e538258cb2a6bad0": WEBPACK_IMPORTED_MODULE_0.__wbg_newwithlength_e538258cb2a6bad0,
+			"__wbindgen_throw": WEBPACK_IMPORTED_MODULE_0.__wbindgen_throw,
+			"__wbindgen_memory": WEBPACK_IMPORTED_MODULE_0.__wbindgen_memory
+		}
+	});
+	__webpack_async_result__();
+	} catch(e) { __webpack_async_result__(e); }
+}, 1);
+
 /***/ })
 
 /******/ 	});
@@ -10079,6 +10291,77 @@ exports.HUD = HUD;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && !queue.d) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = 1);
+/******/ 			if(queue) queue.moduleId = module.id;
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			promise.moduleId = module.id;
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -10120,6 +10403,26 @@ exports.HUD = HUD;
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/wasm loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.v = (exports, wasmModuleId, wasmModuleHash, importsObj) => {
+/******/ 			var req = fetch(__webpack_require__.p + "rapier3d.debug.wasm");
+/******/ 			if (typeof WebAssembly.instantiateStreaming === 'function') {
+/******/ 				return WebAssembly.instantiateStreaming(req, importsObj)
+/******/ 					.then((res) => (Object.assign(exports, res.instance.exports)));
+/******/ 			}
+/******/ 			return req
+/******/ 				.then((x) => (x.arrayBuffer()))
+/******/ 				.then((bytes) => (WebAssembly.instantiate(bytes, importsObj)))
+/******/ 				.then((res) => (Object.assign(exports, res.instance.exports)));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/dist/";
 /******/ 	})();
 /******/ 	
 /************************************************************************/

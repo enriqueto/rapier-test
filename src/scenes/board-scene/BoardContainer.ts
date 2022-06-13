@@ -3,11 +3,16 @@ export class BoardContainer extends Phaser.GameObjects.Container {
     constructor(scene: Phaser.Scene) {
 
         super(scene);
+        this._setup();
+    }
 
-        import("@dimforge/rapier2d").then(RAPIER => {
 
-            console.log("HOLA");
+    private _setup() {
 
+        import(
+            /* webpackMode: "eager" */
+            "@dimforge/rapier2d"
+        ).then(RAPIER => {
             // Use the RAPIER module here.
             let gravity = { x: 0.0, y: -9.81 };
             let world = new RAPIER.World(gravity);
