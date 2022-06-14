@@ -6,5 +6,7 @@ export class GameConstants {
     public static readonly GAME_WIDTH = 768;
     public static readonly GAME_HEIGHT = 1024;
 
+    public static readonly METERS_TO_PIXEL_RATIO = 100;
+
     public static readonly SAVED_GAME_DATA_KEY = "physics-game";
 }

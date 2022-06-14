@@ -27,7 +27,7 @@ export class BoardScene extends Phaser.Scene {
         BoardManager.init();
 
         const tmpBackground = this.add.graphics();
-        tmpBackground.fillStyle(0x222222);
+        tmpBackground.fillStyle(0x999966);
         tmpBackground.fillRect(0, 0, GameConstants.GAME_WIDTH, GameConstants.GAME_HEIGHT);
 
         this.boardContainer = new BoardContainer(this);
@@ -38,7 +38,10 @@ export class BoardScene extends Phaser.Scene {
 
         this.gui = new GUI(this);
         this.add.existing(this.gui);
+    }
 
-        this.cameras.main.fadeIn(300, 255, 255, 255);
+    public update(): void {
+
+        this.boardContainer.update();
     }
 }
