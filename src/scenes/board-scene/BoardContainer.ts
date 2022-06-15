@@ -7,6 +7,8 @@ import { DebugGraphics } from "./DebugGraphics";
 
 export class BoardContainer extends Phaser.GameObjects.Container {
 
+    public static currentInstance: BoardContainer;
+
     private ballsContainer: Phaser.GameObjects.Container;
     private walls: Walls;
     private debugGraphics: DebugGraphics;
@@ -15,6 +17,8 @@ export class BoardContainer extends Phaser.GameObjects.Container {
     constructor(scene: Phaser.Scene) {
 
         super(scene);
+
+        BoardContainer.currentInstance = this;
 
         this.x = GameConstants.GAME_WIDTH / 2;
 
@@ -28,8 +32,8 @@ export class BoardContainer extends Phaser.GameObjects.Container {
         this.walls = new Walls(this.scene);
         this.add(this.walls);
 
-        this.debugGraphics = new DebugGraphics(this.scene);
-        this.add(this.debugGraphics);
+        // this.debugGraphics = new DebugGraphics(this.scene);
+        // this.add(this.debugGraphics);
     }
 
     public update(): void {
@@ -61,6 +65,19 @@ export class BoardContainer extends Phaser.GameObjects.Container {
         }
     }
 
+    public removeBall(ball: BallActor): void {
+
+        const rigidBody = ball.rigidBody;
+        GameVars.world.removeRigidBody(rigidBody);
+
+        const i = this.balls.indexOf(ball);
+
+        if (i !== -1) {
+            this.balls.splice(i, 1);
+            ball.destroy();
+        }
+    }
+
     private spawnBall(x: number, y: number): void {
 
         let rigidBodyDesc = GameVars.RAPIER.RigidBodyDesc.dynamic();
@@ -68,7 +85,7 @@ export class BoardContainer extends Phaser.GameObjects.Container {
 
         const rigidBody = GameVars.world.createRigidBody(rigidBodyDesc);
         let colliderDesc = GameVars.RAPIER.ColliderDesc.ball(.25);
-        colliderDesc.setRestitution(0.15);
+        colliderDesc.setRestitution(.15);
 
         GameVars.world.createCollider(colliderDesc, rigidBody);
 
