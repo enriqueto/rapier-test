@@ -9624,6 +9624,7 @@ var GameConstants = /** @class */ (function () {
     GameConstants.VERBOSE = false;
     GameConstants.GAME_WIDTH = 768;
     GameConstants.GAME_HEIGHT = 1024;
+    GameConstants.METERS_TO_PIXEL_RATIO = 100;
     GameConstants.SAVED_GAME_DATA_KEY = "physics-game";
     return GameConstants;
 }());
@@ -9905,16 +9906,18 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var GameVars_1 = __webpack_require__(/*! ../../GameVars */ "./src/GameVars.ts");
+var BallActor_1 = __webpack_require__(/*! ./actors/BallActor */ "./src/scenes/board-scene/actors/BallActor.ts");
 var DebugGraphics_1 = __webpack_require__(/*! ./DebugGraphics */ "./src/scenes/board-scene/DebugGraphics.ts");
 var BoardContainer = /** @class */ (function (_super) {
     __extends(BoardContainer, _super);
     function BoardContainer(scene) {
         var _this = _super.call(this, scene) || this;
-        _this.setUpPhysics();
+        _this.balls = [];
+        _this.setupWorld();
+        _this.ballsContainer = new Phaser.GameObjects.Container(_this.scene);
+        _this.add(_this.ballsContainer);
         _this.debugGraphics = new DebugGraphics_1.DebugGraphics(_this.scene);
         _this.add(_this.debugGraphics);
-        var c = Phaser.Display.Color.RGBToString(1, 2, 3);
-        console.log(c);
         return _this;
     }
     BoardContainer.prototype.update = function () {
@@ -9922,40 +9925,56 @@ var BoardContainer = /** @class */ (function (_super) {
             return;
         }
         GameVars_1.GameVars.world.step();
-        this.debugGraphics.update();
-        // // Get and print the rigid-body's position.
-        // let position = this.rigidBody.translation();
-        // console.log("Rigid-body position: ", position.x, position.y);
+        if (this.debugGraphics) {
+            this.debugGraphics.update();
+        }
+        for (var i = 0; i < this.balls.length; i++) {
+            var ball = this.balls[i];
+            ball.update();
+        }
     };
-    BoardContainer.prototype.setUpPhysics = function () {
+    BoardContainer.prototype.startGame = function () {
+        for (var i = 0; i < 75; i++) {
+            var x = 2 - 4 * GameVars_1.GameVars.prng.getRandom();
+            var y = 10 + 4 * GameVars_1.GameVars.prng.getRandom();
+            this.spawnBall(x, y);
+        }
+    };
+    BoardContainer.prototype.spawnBall = function (x, y) {
+        var rigidBodyDesc = GameVars_1.GameVars.RAPIER.RigidBodyDesc.dynamic();
+        rigidBodyDesc.setTranslation(x, y);
+        var rigidBody = GameVars_1.GameVars.world.createRigidBody(rigidBodyDesc);
+        var colliderDesc = GameVars_1.GameVars.RAPIER.ColliderDesc.ball(.25);
+        colliderDesc.setRestitution(0.15);
+        GameVars_1.GameVars.world.createCollider(colliderDesc, rigidBody);
+        var ball = new BallActor_1.BallActor(this.scene, 1, rigidBody);
+        this.ballsContainer.add(ball);
+        this.balls.push(ball);
+    };
+    BoardContainer.prototype.removeBody = function () {
+        var allBodies = GameVars_1.GameVars.world.bodies.getAll();
+        var randomBody = Phaser.Utils.Array.GetRandom(allBodies);
+        GameVars_1.GameVars.world.removeRigidBody(randomBody);
+    };
+    BoardContainer.prototype.setupWorld = function () {
         var _this = this;
         Promise.resolve().then(function () { return __webpack_require__(
         /* webpackMode: "eager" */
         /*! @dimforge/rapier2d */ "./node_modules/@dimforge/rapier2d/rapier.js"); }).then(function (RAPIER) {
+            GameVars_1.GameVars.RAPIER = RAPIER;
             // Use the RAPIER module here.
             var gravity = { x: 0.0, y: -9.81 };
             GameVars_1.GameVars.world = new RAPIER.World(gravity);
             // Create the ground
-            var groundColliderDesc = RAPIER.ColliderDesc.cuboid(10.0, 0.1);
+            var groundColliderDesc = RAPIER.ColliderDesc.cuboid(4.0, 0.1);
             GameVars_1.GameVars.world.createCollider(groundColliderDesc);
-            // Create a dynamic rigid-body.
-            var rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-                .setTranslation(0.0, 1.0);
-            _this.rigidBody = GameVars_1.GameVars.world.createRigidBody(rigidBodyDesc);
-            // Create a cuboid collider attached to the dynamic rigidBody.
-            var colliderDesc = RAPIER.ColliderDesc.cuboid(0.5, 0.5);
-            var collider = GameVars_1.GameVars.world.createCollider(colliderDesc, _this.rigidBody);
-            // Game loop. Replace by your own game loop system.
-            // let gameLoop = () => {
-            //     // Ste the simulation forward.  
-            //     GameVars.world.step();
-            //     // // Get and print the rigid-body's position.
-            //     // let position = rigidBody.translation();
-            //     // console.log("Rigid-body position: ", position.x, position.y);
-            //     setTimeout(gameLoop, 16);
-            // };
-            // gameLoop();
-            // console.log("bodies:", GameVars.world.bodies);
+            var leftWallColliderDesc = RAPIER.ColliderDesc.cuboid(0.1, 16);
+            leftWallColliderDesc.setTranslation(-2.75, 0);
+            GameVars_1.GameVars.world.createCollider(leftWallColliderDesc);
+            var rightWallColliderDesc = RAPIER.ColliderDesc.cuboid(0.1, 16);
+            rightWallColliderDesc.setTranslation(2.75, 0);
+            GameVars_1.GameVars.world.createCollider(rightWallColliderDesc);
+            _this.startGame();
         });
     };
     return BoardContainer;
@@ -9975,11 +9994,13 @@ exports.BoardContainer = BoardContainer;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var GameVars_1 = __webpack_require__(/*! ../../GameVars */ "./src/GameVars.ts");
+var PRNG_1 = __webpack_require__(/*! ../../utils/PRNG */ "./src/utils/PRNG.ts");
 var BoardManager = /** @class */ (function () {
     function BoardManager() {
     }
     BoardManager.init = function () {
         GameVars_1.GameVars.world = null;
+        GameVars_1.GameVars.prng = new PRNG_1.PRNG(43);
     };
     BoardManager.undo = function () {
         //
@@ -10030,7 +10051,7 @@ var BoardScene = /** @class */ (function (_super) {
         GameManager_1.GameManager.setCurrentScene(this);
         BoardManager_1.BoardManager.init();
         var tmpBackground = this.add.graphics();
-        tmpBackground.fillStyle(0x222222);
+        tmpBackground.fillStyle(0x999966);
         tmpBackground.fillRect(0, 0, GameConstants_1.GameConstants.GAME_WIDTH, GameConstants_1.GameConstants.GAME_HEIGHT);
         this.boardContainer = new BoardContainer_1.BoardContainer(this);
         this.add.existing(this.boardContainer);
@@ -10071,38 +10092,32 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+var GameConstants_1 = __webpack_require__(/*! ../../GameConstants */ "./src/GameConstants.ts");
 var GameVars_1 = __webpack_require__(/*! ../../GameVars */ "./src/GameVars.ts");
 var DebugGraphics = /** @class */ (function (_super) {
     __extends(DebugGraphics, _super);
     function DebugGraphics(scene) {
-        var _this = _super.call(this, scene) || this;
-        _this.t = false;
-        return _this;
+        return _super.call(this, scene) || this;
     }
     DebugGraphics.prototype.update = function () {
-        if (this.t) {
-            return;
-        }
-        this.t = true;
         this.clear();
         var buffers = GameVars_1.GameVars.world.debugRender();
         var vtx = buffers.vertices;
         var cls = buffers.colors;
-        var scaleFactor = 100;
-        var dx = 300;
-        var dy = 400;
+        var dx = GameConstants_1.GameConstants.GAME_WIDTH / 2;
+        var dy = GameConstants_1.GameConstants.GAME_HEIGHT;
         for (var i = 0; i < vtx.length / 4; i++) {
-            var r = cls[i * 8] * 255;
-            var g = cls[i * 8 + 1] * 255;
-            var b = cls[i * 8 + 2] * 255;
-            this.lineStyle(1, 0x00FF00);
-            var x = vtx[i * 4] * scaleFactor + dx;
-            var y = -vtx[i * 4 + 1] * scaleFactor + dy;
-            this.moveTo(x, y);
-            x = vtx[i * 4 + 2] * scaleFactor + dx;
-            y = -vtx[i * 4 + 3] * scaleFactor + dy;
-            this.lineTo(x, y);
-            this.stroke();
+            var r = Math.floor(cls[i * 8] * 256);
+            var g = Math.floor(cls[i * 8 + 1] * 256);
+            var b = Math.floor(cls[i * 8 + 2] * 256);
+            var colorStr = Phaser.Display.Color.RGBToString(r, g, b);
+            colorStr = colorStr.replace(/#/g, "0x");
+            this.lineStyle(1, Number(colorStr), 1);
+            var x1 = vtx[i * 4] * GameConstants_1.GameConstants.METERS_TO_PIXEL_RATIO + dx;
+            var y1 = -vtx[i * 4 + 1] * GameConstants_1.GameConstants.METERS_TO_PIXEL_RATIO + dy;
+            var x2 = vtx[i * 4 + 2] * GameConstants_1.GameConstants.METERS_TO_PIXEL_RATIO + dx;
+            var y2 = -vtx[i * 4 + 3] * GameConstants_1.GameConstants.METERS_TO_PIXEL_RATIO + dy;
+            this.lineBetween(x1, y1, x2, y2);
         }
     };
     return DebugGraphics;
@@ -10176,6 +10191,85 @@ var HUD = /** @class */ (function (_super) {
     return HUD;
 }(Phaser.GameObjects.Container));
 exports.HUD = HUD;
+
+
+/***/ }),
+
+/***/ "./src/scenes/board-scene/actors/BallActor.ts":
+/*!****************************************************!*\
+  !*** ./src/scenes/board-scene/actors/BallActor.ts ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, exports) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var BallActor = /** @class */ (function (_super) {
+    __extends(BallActor, _super);
+    function BallActor(scene, color, rigidBody) {
+        var _this = _super.call(this, scene) || this;
+        _this.color = color;
+        _this.rigidBody = rigidBody;
+        _this.ballImg = new Phaser.GameObjects.Image(_this.scene, 0, 0, "texture_atlas_1", "ball_" + _this.color);
+        _this.add(_this.ballImg);
+        return _this;
+    }
+    BallActor.prototype.update = function () {
+        var p = this.rigidBody.translation();
+        var r = this.rigidBody.rotation();
+        this.x = p.x;
+        this.y = p.y;
+        this.rotation = r;
+    };
+    return BallActor;
+}(Phaser.GameObjects.Container));
+exports.BallActor = BallActor;
+
+
+/***/ }),
+
+/***/ "./src/utils/PRNG.ts":
+/*!***************************!*\
+  !*** ./src/utils/PRNG.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+var PRNG = /** @class */ (function () {
+    function PRNG(seed) {
+        this._seed = seed || Math.random();
+        this._seed = Math.imul(741103597, this._seed) >>> 0;
+    }
+    Object.defineProperty(PRNG.prototype, "seed", {
+        set: function (value) {
+            this._seed = value;
+            this._seed = Math.imul(741103597, this._seed) >>> 0;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PRNG.prototype.getRandom = function () {
+        this._seed = Math.imul(741103597, this._seed) >>> 0;
+        return Math.floor(1e5 * (this._seed / (Math.pow(2, 32)))) / 1e5;
+    };
+    return PRNG;
+}());
+exports.PRNG = PRNG;
 
 
 /***/ }),

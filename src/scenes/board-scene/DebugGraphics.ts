@@ -18,7 +18,6 @@ export class DebugGraphics extends Phaser.GameObjects.Graphics {
         let vtx = buffers.vertices;
         let cls = buffers.colors;
 
-        const dx = GameConstants.GAME_WIDTH / 2;
         const dy = GameConstants.GAME_HEIGHT;
 
         for (let i = 0; i < vtx.length / 4; i ++) {
@@ -32,9 +31,9 @@ export class DebugGraphics extends Phaser.GameObjects.Graphics {
 
             this.lineStyle(1, Number(colorStr), 1);
 
-            const x1 = vtx[i * 4] * GameConstants.METERS_TO_PIXEL_RATIO + dx;
+            const x1 = vtx[i * 4] * GameConstants.METERS_TO_PIXEL_RATIO;
             const y1 = -vtx[i * 4 + 1] * GameConstants.METERS_TO_PIXEL_RATIO + dy;
-            const x2 = vtx[i * 4 + 2] * GameConstants.METERS_TO_PIXEL_RATIO + dx;
+            const x2 = vtx[i * 4 + 2] * GameConstants.METERS_TO_PIXEL_RATIO;
             const y2 = -vtx[i * 4 + 3] * GameConstants.METERS_TO_PIXEL_RATIO + dy;
 
             this.lineBetween(x1, y1, x2, y2);

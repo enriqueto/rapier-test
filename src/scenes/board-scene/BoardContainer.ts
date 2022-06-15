@@ -1,21 +1,32 @@
 import RAPIER, { RigidBody } from "@dimforge/rapier2d";
+import { GameConstants } from "../../GameConstants";
 import { GameVars } from "../../GameVars";
+import { BallActor } from "./actors/BallActor";
+import { Walls } from "./actors/Walls";
 import { DebugGraphics } from "./DebugGraphics";
 
 export class BoardContainer extends Phaser.GameObjects.Container {
 
-    private rigidBody: RigidBody;
+    private ballsContainer: Phaser.GameObjects.Container;
+    private walls: Walls;
     private debugGraphics: DebugGraphics;
-
-    private counter: number;
+    private balls: BallActor[];
 
     constructor(scene: Phaser.Scene) {
 
         super(scene);
 
-        this.counter = 0;
+        this.x = GameConstants.GAME_WIDTH / 2;
 
-        this.setUpPhysics();
+        this.balls = [];
+
+        this.setupWorld();
+
+        this.ballsContainer = new Phaser.GameObjects.Container(this.scene);
+        this.add(this.ballsContainer);
+
+        this.walls = new Walls(this.scene);
+        this.add(this.walls);
 
         this.debugGraphics = new DebugGraphics(this.scene);
         this.add(this.debugGraphics);
@@ -29,31 +40,42 @@ export class BoardContainer extends Phaser.GameObjects.Container {
 
         GameVars.world.step();
 
-        this.debugGraphics.update();
-
-        if (GameVars.prng.getRandom() > .975 && this.counter < 30) {
-            this.spawnBox();
-            this.counter ++;
+        if (this.debugGraphics) {
+            this.debugGraphics.update();
         }
 
-        if (GameVars.prng.getRandom() > .985 && this.counter > 15) {
-            this.removeBody();
+        for (let i = 0; i < this.balls.length; i ++) {
+            const ball = this.balls[i];
+            ball.update();
         }
     }
 
-    private spawnBox(): void {
+    public startGame(): void {
 
-        let rigidBodyDesc = GameVars.RAPIER.RigidBodyDesc.dynamic()
-            .setTranslation(0.0, 14.0);
-            rigidBodyDesc.setRotation(360 * GameVars.prng.getRandom() * Math.PI / 180);
-    
+        for (let i = 0; i < 100; i ++) {
+
+            const x = 2 - 4 * GameVars.prng.getRandom();
+            const y = 10 + 4 * GameVars.prng.getRandom();
+
+            this.spawnBall(x, y);
+        }
+    }
+
+    private spawnBall(x: number, y: number): void {
+
+        let rigidBodyDesc = GameVars.RAPIER.RigidBodyDesc.dynamic();
+        rigidBodyDesc.setTranslation(x, y);
+
         const rigidBody = GameVars.world.createRigidBody(rigidBodyDesc);
+        let colliderDesc = GameVars.RAPIER.ColliderDesc.ball(.25);
+        colliderDesc.setRestitution(0.15);
 
-        const width = .2 + .2 * GameVars.prng.getRandom();
-        const height = .2 + .2 *  GameVars.prng.getRandom();
+        GameVars.world.createCollider(colliderDesc, rigidBody);
 
-        let colliderDesc = GameVars.RAPIER.ColliderDesc.cuboid(width, height);
-        let collider = GameVars.world.createCollider(colliderDesc, rigidBody);
+        const ball = new BallActor(this.scene, 1, rigidBody);
+        this.ballsContainer.add(ball);
+
+        this.balls.push(ball);
     }
 
     private removeBody(): void {
@@ -63,11 +85,9 @@ export class BoardContainer extends Phaser.GameObjects.Container {
         const randomBody = Phaser.Utils.Array.GetRandom(allBodies);
 
         GameVars.world.removeRigidBody(randomBody);
-
-        console.log("RANDOM BODY REMOVED");
     }
 
-    private setUpPhysics() {
+    private setupWorld() {
 
         import(
             /* webpackMode: "eager" */
@@ -81,35 +101,18 @@ export class BoardContainer extends Phaser.GameObjects.Container {
             GameVars.world = new RAPIER.World(gravity);
 
             // Create the ground
-            let groundColliderDesc = RAPIER.ColliderDesc.cuboid(10.0, 0.1);
-            
+            const groundColliderDesc = RAPIER.ColliderDesc.cuboid(4.0, 0.1);
             GameVars.world.createCollider(groundColliderDesc);
 
-            // Create a dynamic rigid-body.
-            let rigidBodyDesc = RAPIER.RigidBodyDesc.dynamic()
-                .setTranslation(0.0, 14.0);
-                rigidBodyDesc.setRotation(30 * Math.PI / 180);
-            this.rigidBody = GameVars.world.createRigidBody(rigidBodyDesc);
+            const leftWallColliderDesc = RAPIER.ColliderDesc.cuboid(0.1, 16);
+            leftWallColliderDesc.setTranslation(-2.75, 0);
+            GameVars.world.createCollider(leftWallColliderDesc);
 
-            // Create a cuboid collider attached to the dynamic rigidBody.
-            let colliderDesc = RAPIER.ColliderDesc.cuboid(0.5, 0.5);
-            let collider = GameVars.world.createCollider(colliderDesc, this.rigidBody);
+            const rightWallColliderDesc = RAPIER.ColliderDesc.cuboid(0.1, 16);
+            rightWallColliderDesc.setTranslation(2.75, 0);
+            GameVars.world.createCollider(rightWallColliderDesc);
 
-            // Game loop. Replace by your own game loop system.
-            // let gameLoop = () => {
-            //     // Ste the simulation forward.  
-            //     GameVars.world.step();
-
-            //     // // Get and print the rigid-body's position.
-            //     // let position = rigidBody.translation();
-            //     // console.log("Rigid-body position: ", position.x, position.y);
-
-            //     setTimeout(gameLoop, 16);
-            // };
-
-            // gameLoop();
-
-            // console.log("bodies:", GameVars.world.bodies);
+            this.startGame();
         });
     }
 

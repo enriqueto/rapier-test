@@ -6,7 +6,7 @@ export class BoardManager {
     public static init(): void {
         
         GameVars.world = null;
-        GameVars.prng = new PRNG(3);
+        GameVars.prng = new PRNG(43);
     }
 
     public static undo(): void {
