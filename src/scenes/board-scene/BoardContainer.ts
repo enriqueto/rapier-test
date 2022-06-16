@@ -48,7 +48,7 @@ export class BoardContainer extends Phaser.GameObjects.Container {
             this.debugGraphics.update();
         }
 
-        for (let i = 0; i < this.balls.length; i ++) {
+        for (let i = 0; i < this.balls.length; i++) {
             const ball = this.balls[i];
             ball.update();
         }
@@ -56,7 +56,7 @@ export class BoardContainer extends Phaser.GameObjects.Container {
 
     public startGame(): void {
 
-        for (let i = 0; i < 100; i ++) {
+        for (let i = 0; i < 100; i++) {
 
             const x = 2 - 4 * GameVars.prng.getRandom();
             const y = 10 + 4 * GameVars.prng.getRandom();

@@ -13,25 +13,25 @@ import { GameManager } from "./GameManager";
 let game: Game;
 
 window.onload = () => {
-    
+
     const gameConfig = {
 
         version: GameConstants.VERSION,
         type: Phaser.AUTO,
         backgroundColor: "CCCCCC",
         scale: {
-            mode: Phaser.Scale.FIT,
+            mode: Phaser.Scale.ENVELOP,
             autoCenter: Phaser.Scale.CENTER_BOTH,
             parent: "content",
             width: GameConstants.GAME_WIDTH,
             height: GameConstants.GAME_HEIGHT
         },
 
-        scene:  [
-                    BootScene, 
-                    PreloadScene, 
-                    BoardScene
-                ]
+        scene: [
+            BootScene,
+            PreloadScene,
+            BoardScene
+        ]
     };
 
     // If compilation error here, compare Phaser definitions file of working copy (phaser.d.ts, line 48040 on 27-05-2019)
@@ -39,9 +39,11 @@ window.onload = () => {
     game = new Game(gameConfig);
 
     window.focus();
-    resize();
-    window.addEventListener("resize", resize, false);
+    // resize();
+    // window.addEventListener("resize", resize, false);
     window.addEventListener("orientationchange", checkOriention, false);
+    // document.getElementById("orientation").style.display = "none";
+
 };
 
 function resize(): void {
@@ -55,7 +57,7 @@ function resize(): void {
     const gameHeight: any = game.config.height;
 
     const gameRatio = gameWidth / gameHeight;
-    
+
     if (windowRatio < gameRatio) {
         canvas.style.width = windowWidth + "px";
         canvas.style.height = (windowWidth / gameRatio) + "px";
@@ -73,9 +75,9 @@ function checkOriention(): void {
     if (h < w) {
 
         if (!GameVars.initialised) {
-            
-            setTimeout(function() { 
-                GameManager.init(); 
+
+            setTimeout(function () {
+                GameManager.init();
             }, 300);
         }
 

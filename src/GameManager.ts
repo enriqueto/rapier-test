@@ -2,21 +2,24 @@ import { GameConstants } from "./GameConstants";
 import { GameVars } from "./GameVars";
 
 export class GameManager {
-
+    private static initialized: boolean;
     public static init(): void {
-
-        if (GameVars.currentScene.sys.game.device.os.desktop) {
-
-            GameVars.scaleY = 1;
-
-        } else {
-
-            GameVars.currentScene.game.scale.displaySize = GameVars.currentScene.game.scale.parentSize;
-            GameVars.currentScene.game.scale.refresh();
-
-            const aspectRatio = window.innerHeight / window.innerWidth;
-            GameVars.scaleY = (GameConstants.GAME_HEIGHT / GameConstants.GAME_WIDTH) / aspectRatio;
+        if (GameManager.initialized) {
+            return;
         }
+        GameManager.initialized = true;
+        // if (GameVars.currentScene.sys.game.device.os.desktop) {
+
+        //     GameVars.scaleY = 1;
+
+        // } else {
+
+        //     GameVars.currentScene.game.scale.displaySize = GameVars.currentScene.game.scale.parentSize;
+        //     GameVars.currentScene.game.scale.refresh();
+
+        //     const aspectRatio = window.innerHeight / window.innerWidth;
+        //     GameVars.scaleY = (GameConstants.GAME_HEIGHT / GameConstants.GAME_WIDTH) / aspectRatio;
+        // }
 
         GameManager.readGameData();
     }

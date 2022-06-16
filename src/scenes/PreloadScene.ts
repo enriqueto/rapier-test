@@ -1,8 +1,9 @@
 import { GameManager } from "../GameManager";
 import { GameConstants } from "../GameConstants";
 import { GameVars } from "../GameVars";
+import { BaseScene } from "./BaseScene";
 
-export class PreloadScene extends Phaser.Scene {
+export class PreloadScene extends BaseScene {
 
     public static currentInstance: PreloadScene;
 
@@ -27,7 +28,7 @@ export class PreloadScene extends Phaser.Scene {
 
         GameManager.onGameAssetsLoaded();
     }
-    
+
     private composeScene(): void {
 
         const bck = this.add.graphics();
@@ -35,7 +36,6 @@ export class PreloadScene extends Phaser.Scene {
         bck.fillRect(0, 0, GameConstants.GAME_WIDTH, GameConstants.GAME_HEIGHT);
 
         this.scaledItemsContainer = this.add.container(GameConstants.GAME_WIDTH / 2, 560);
-        this.scaledItemsContainer.scaleY = GameVars.scaleY;
 
         const barWidth = 550;
         const barWHeight = 20;
@@ -46,20 +46,20 @@ export class PreloadScene extends Phaser.Scene {
         preloadBarCapsuleBorder.fillRect(0, 0, barWidth + borderWidth * 2, barWHeight + borderWidth * 2);
         preloadBarCapsuleBorder.x = - barWidth / 2 - borderWidth;
         preloadBarCapsuleBorder.y = -borderWidth;
-        this.scaledItemsContainer.add(preloadBarCapsuleBorder); 
+        this.scaledItemsContainer.add(preloadBarCapsuleBorder);
 
         const preloadBarCapsule = new Phaser.GameObjects.Graphics(this);
         preloadBarCapsule.fillStyle(0xc6d6dd);
-        preloadBarCapsule.fillRect(0, 0, barWidth, barWHeight );
+        preloadBarCapsule.fillRect(0, 0, barWidth, barWHeight);
         preloadBarCapsule.x = - barWidth / 2;
-        this.scaledItemsContainer.add(preloadBarCapsule); 
+        this.scaledItemsContainer.add(preloadBarCapsule);
 
         this.progressBar = new Phaser.GameObjects.Graphics(this);
         this.progressBar.fillStyle(0xff7b56);
-        this.progressBar.fillRect(0, 0, barWidth, barWHeight );
+        this.progressBar.fillRect(0, 0, barWidth, barWHeight);
         this.progressBar.x = - barWidth / 2;
         this.progressBar.scaleX = 0;
-        this.scaledItemsContainer.add(this.progressBar); 
+        this.scaledItemsContainer.add(this.progressBar);
     }
 
     private loadAssets(): void {

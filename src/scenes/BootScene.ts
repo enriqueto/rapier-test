@@ -1,20 +1,13 @@
-import { GameManager } from "../GameManager"; 
+import { GameManager } from "../GameManager";
 import { Game } from "../Game";
 import { GameConstants } from "../GameConstants";
 import { GameVars } from "../GameVars";
+import { BaseScene } from "./BaseScene";
 
-export class BootScene extends Phaser.Scene {
+export class BootScene extends BaseScene {
 
     public static currentInstance: BootScene;
 
-    public static onOrientationChange(): void {
-
-        BootScene.currentInstance.time.addEvent({ delay: 100, callback: () => {
-            GameVars.scaleY = (GameConstants.GAME_HEIGHT / GameConstants.GAME_WIDTH) / (window.innerHeight / window.innerWidth);
-            Game.currentInstance.scale.refresh();
-        }, callbackScope: BootScene.currentInstance});
-    }
-    
     constructor() {
 
         super("BootScene");
@@ -25,7 +18,6 @@ export class BootScene extends Phaser.Scene {
     }
 
     public create(): void {
-
         BootScene.currentInstance = this;
         GameManager.setCurrentScene(this);
 

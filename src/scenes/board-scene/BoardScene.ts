@@ -4,19 +4,20 @@ import { HUD } from "./HUD";
 import { GUI } from "./GUI";
 import { BoardManager } from "./BoardManager";
 import { BoardContainer } from "./BoardContainer";
+import { BaseScene } from "../BaseScene";
 
-export class BoardScene extends Phaser.Scene {
+export class BoardScene extends BaseScene {
 
     public static currentInstance: BoardScene;
 
     private gui: GUI;
     private hud: HUD;
     private boardContainer: BoardContainer;
-    
+
     constructor() {
 
         super("BoardScene");
-        
+
         BoardScene.currentInstance = this;
     }
 
@@ -38,10 +39,13 @@ export class BoardScene extends Phaser.Scene {
 
         this.gui = new GUI(this);
         this.add.existing(this.gui);
+
     }
 
     public update(): void {
-
+        super.update();
         this.boardContainer.update();
+        console.log(this.screenLeft, this.screenBottom, this.screenRight);
+
     }
 }

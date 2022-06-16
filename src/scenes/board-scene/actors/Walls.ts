@@ -4,7 +4,7 @@ import { GameConstants } from "../../../GameConstants";
 export class Walls extends Phaser.GameObjects.Container {
 
     constructor(scene: Phaser.Scene) {
-        
+
         super(scene);
 
         const color = 0x0022FF;
